@@ -1,5 +1,5 @@
 export const brands = [
-  { name: "Carrefour", image: "/public/Carrefour.png" },
-  { name: "Monoprix", image: "public/Monoprix.png" },
-  { name: "Other", image: "public/Other.jpg" },
+  { name: "Carrefour", image: "/public/Carrefour.png", isfavorit: false },
+  { name: "Monoprix", image: "public/Monoprix.png", isfavorit: false },
+  { name: "Other", image: "public/Other.jpg", isfavorit: false },
 ];

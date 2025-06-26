@@ -127,6 +127,7 @@ function AddCardModal() {
             <button
               onClick={() => {
                 addCard(brand, name, code, pin, balance, selectedBrand.image);
+                toggleModal();
               }}
               className=" flex bg-blue-600 border-1 border-blue-700 text-amber-50 h-10 w-fit  hover:bg-blue-500 hover:border-blue-500 hover:cursor-pointer font-medium px-3 py-2 rounded-lg items-center"
             >

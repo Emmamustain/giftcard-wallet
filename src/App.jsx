@@ -1,11 +1,12 @@
 import "./App.css";
-import Cards from "./Components/Cards/Cards.jsx";
+import FavoriteCards from "./Components/FavoriteCards/FavoriteCards.jsx";
 import Categories from "./Components/Categories/Categories.jsx";
 import Header from "./Components/Header/Header.jsx";
 import SearchBar from "./Components/SearchBar/SearchBar.jsx";
 import DiscoverCards from "./Components/DiscoverCards/DiscoverCards.jsx";
 
 import AddCardModal from "./Components/AddCardModal/AddCardModal.jsx";
+import Cards from "./Components/Cards/Cards.jsx";
 
 function App() {
   return (
@@ -17,8 +18,10 @@ function App() {
         </div>
         <Categories />
         <AddCardModal />
-        <Cards />
-        <DiscoverCards />
+        {/* <FavoriteCards />
+        <DiscoverCards /> */}
+        <Cards favoritesOnly={true} />
+        <Cards favoritesOnly={false} />
       </div>
     </>
   );
