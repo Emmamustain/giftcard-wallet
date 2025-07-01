@@ -16,7 +16,7 @@ function AddCardModal() {
     setIsOpen(!isOpen);
   };
   console.log({ brand });
-  const selectedBrand = brands.find((v) => v.name === brand);
+  const selectedBrand = brands.find((v) => v.bName === brand);
   console.log({ selectedBrand });
 
   return (
@@ -68,7 +68,7 @@ function AddCardModal() {
               </option>
 
               {brands.map((brand) => (
-                <option value={brand.name}>{brand.name}</option>
+                <option value={brand.bName}>{brand.bName}</option>
               ))}
             </select>
             <label className="text-gray-600 pl-2 font-normal">

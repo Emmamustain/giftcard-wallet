@@ -3,9 +3,9 @@ import { persist } from "zustand/middleware";
 
 const useCardStore = create(
   persist(
-    (set) => ({
+    (set, get) => ({
       cards: [],
-      addCard: (name, brand, code, pin, balance, image) => {
+      addCard: (brand, name, code, pin, balance, image) => {
         const id = crypto.randomUUID();
         const date = new Date();
         const newCard = {
@@ -37,6 +37,18 @@ const useCardStore = create(
             })),
         })),
 
+      getCardById: (id) => get().cards.find((card) => card.id === id),
+
+      updateName: (id, newName) =>
+        set((state) => ({
+          cards: state.cards.map((card) => {
+            if (card.id === id) {
+              card.name = newName;
+            }
+            return card;
+          }),
+        })),
+
       updateFavorite: (id) =>
         set((state) => ({
           cards: state.cards.map((card) => {
@@ -47,6 +59,7 @@ const useCardStore = create(
           }),
         })),
     }),
+
     {
       name: "cards",
     }
