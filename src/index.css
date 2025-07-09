@@ -8,3 +8,9 @@
   background-color: #edeeee;
   color: black;
 }
+.libre-barcode-39-regular {
+  font-family: "Libre Barcode 39", system-ui;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 70px;
+}

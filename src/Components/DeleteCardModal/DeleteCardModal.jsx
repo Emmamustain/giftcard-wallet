@@ -22,8 +22,8 @@ function DeleteCardModal({ theCard }) {
       {isOpen && (
         <div className="absolute flex flex-col items-center justify-between top-32 left-1/2 -translate-x-1/2 w-[600px] h-fit min-h-[260px] rounded-2xl bg-gray-50 p-6">
           <div className="text-2xl font-bold text-gray-900">Delete Card</div>
-          <div className="font-light text-gray-600 bg-red-100 border-1 border-red-200 rounded-lg flex items-center h-[50px] w-fit p-4">
-            {`Are you sure you want to delete the ${theCard} card ?`}
+          <div className="font-light text-gray-600 bg-violet-100 border-1 border-violet-200 rounded-lg flex items-center h-[50px] w-fit p-4">
+            {`Are you sure you want to delete the ' ${theCard} ' card ?`}
           </div>
           <div className="h-fit w-full gap-2 rounded-lg flex justify-between p-2">
             <button
@@ -33,7 +33,7 @@ function DeleteCardModal({ theCard }) {
               Cancel
             </button>
             <button
-              className="flex  bg-orange-300 border-1 border-gray-400 cursor-pointer font-medium px-3 py-2 items-center "
+              className="flex  bg-violet-200 border-1 border-violet-300 hover:bg-violet-300 hover:text-violet-800 text-violet-500 hover:border-violet-300  rounded-lg cursor-pointer font-medium px-3 py-2 items-center "
               onClick={deleteCard}
             >
               Delete
