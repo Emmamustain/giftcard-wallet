@@ -30,11 +30,11 @@ const useCardStore = create(
             }
             return card;
           }),
+        })),
 
-          deleteCard: (id) =>
-            set((state) => ({
-              cards: state.cards.filter((card) => card.id !== id),
-            })),
+      deleteCard: (id) =>
+        set((state) => ({
+          cards: state.cards.filter((card) => card.id !== id),
         })),
 
       getCardById: (id) => get().cards.find((card) => card.id === id),

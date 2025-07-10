@@ -70,7 +70,10 @@ function CardPage() {
             Card History
           </div>
 
-          <DeleteCardModal theCard={selectedCard.name} />
+          <DeleteCardModal
+            nameCard={selectedCard.name}
+            idCard={selectedCard.id}
+          />
         </div>
       </div>
     </>

@@ -3,14 +3,14 @@ import { PlusCircle, CreditCard } from "lucide-react";
 import { useState } from "react";
 import useCardsStore from "../../Hook/useCardsStore";
 import { brands } from "../../data/brands";
-
+import BarCodeScanner from "../BarCodeScanner/BarCodeScanner";
 function AddCardModal() {
   const [name, setName] = useState("");
-  const [code, setCode] = useState("");
   const [pin, setPin] = useState("");
   const [balance, setBalance] = useState("");
   const [brand, setBrand] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [barCode, setBarCode] = useState("");
   const { addCard } = useCardsStore();
   const toggleModal = () => {
     setIsOpen(!isOpen);
@@ -41,8 +41,9 @@ function AddCardModal() {
               </span>
             </p>
           </div>
-          <div className="h-[200px] w-full bg-gray-200 rounded-lg mt-2 ">
-            {selectedBrand ? (
+          <div className="h-[200px] flex items-center justify-center w-full bg-gray-200 rounded-lg mt-2 overflow-hidden">
+            {barCode === "" && <BarCodeScanner setBarCode={setBarCode} />}
+            {selectedBrand && barCode !== "" ? (
               <img
                 src={selectedBrand.image}
                 alt=""
@@ -87,9 +88,9 @@ function AddCardModal() {
               Enter the code
             </label>
             <input
-              value={code}
+              value={barCode}
               onChange={(e) => {
-                setCode(e.target.value);
+                setBarCode(e.target.value);
               }}
               type="text"
               className="border-gray-300 pl-3 border-1 rounded-xl w-full h-10 "
@@ -126,7 +127,14 @@ function AddCardModal() {
             </button>
             <button
               onClick={() => {
-                addCard(brand, name, code, pin, balance, selectedBrand.image);
+                addCard(
+                  brand,
+                  name,
+                  barCode,
+                  pin,
+                  balance,
+                  selectedBrand.image
+                );
                 toggleModal();
               }}
               className=" flex bg-blue-600 border-1 border-blue-700 text-amber-50 h-10 w-fit  hover:bg-blue-500 hover:border-blue-500 hover:cursor-pointer font-medium px-3 py-2 rounded-lg items-center"

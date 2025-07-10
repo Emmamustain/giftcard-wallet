@@ -14,7 +14,7 @@ function Home() {
           <SearchBar />
         </div>
         <Categories />
-        <AddCardModal />
+
         {/* <FavoriteCards />
         <DiscoverCards /> */}
         <Cards favoritesOnly={true} />

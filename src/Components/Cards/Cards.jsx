@@ -13,9 +13,7 @@ function Cards({ favoritesOnly }) {
         {cards
           .filter((card) => card.favorite === favoritesOnly)
           .map((card) => (
-            <a key={card.id} href={`card/${card.id}`}>
-              <Card logo={card.image} id={card.id} favorite={card.favorite} />
-            </a>
+            <Card logo={card.image} id={card.id} favorite={card.favorite} />
           ))}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import { CameraIcon, CircleUserRound } from "lucide-react";
+import AddCardModal from "../AddCardModal/AddCardModal";
 import SearchBar from "../SearchBar/SearchBar";
 import DropDownMenu from "../DropDownMenu/DropDownMenu";
 
@@ -12,7 +12,7 @@ function Header() {
         <SearchBar />
       </div>
       <div className="Right">
-        <CameraIcon size={30} color="black" />
+        <AddCardModal />
         <DropDownMenu />
       </div>
     </header>

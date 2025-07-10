@@ -7,13 +7,13 @@ export const brands = [
   },
   {
     bName: "Monoprix",
-    image: "public/Monoprix.png",
+    image: "/public/Monoprix.png",
     isfavorit: false,
     category: "Groceries",
   },
   {
     bName: "Other",
-    image: "public/Other.jpg",
+    image: "/public/Other.jpg",
     isfavorit: false,
     category: "Other",
   },
