@@ -39,6 +39,13 @@ const useCardStore = create(
 
       getCardById: (id) => get().cards.find((card) => card.id === id),
 
+      searchCards: (query) =>
+        get().cards.filter(
+          (card) =>
+            card.name.toLowerCase().includes(query.toLowerCase()) ||
+            card.brand.toLowerCase().includes(query.toLowerCase())
+        ),
+
       updateName: (id, newName) =>
         set((state) => ({
           cards: state.cards.map((card) => {

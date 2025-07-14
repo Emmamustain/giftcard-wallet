@@ -23,22 +23,20 @@ function AddCardModal() {
     <div>
       <div className="flex justify-self-end px-6 " onClick={toggleModal}>
         <button className=" flex bg-black text-amber-50 font-medium px-3 py-2 rounded-lg hover:bg-gray-700 cursor-pointer items-center">
-          <PlusCircle className="pr-0.5" size={21} /> Add card
+          <PlusCircle size={21} />
         </button>
       </div>
       {isOpen && (
-        <div className="absolute flex flex-col items-center justify-between top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-[600px] h-fit min-h-[400px] rounded-2xl bg-gray-50 p-6">
+        <div className="absolute z-50 flex flex-col items-center justify-between top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-[400px] h-fit min-h-[400px] rounded-2xl bg-gray-50 p-6">
           <div className="h-fit w-full rounded-lg flex flex-col items-center gap-1">
             <div className=" flex justify-center  rounded-4xl bg-black w-fit h-fit p-2">
               <CreditCard color="white" size={20} />{" "}
             </div>
             <h1 className="font-semibold text-gray-800 pt-1"> Add New Card</h1>
             <p className="px-10 text-gray-500 font-light text-sm">
-              Add your gift card details here to easily track your balance
+              Add your gift card details here and
               <br />
-              <span className="text-center block">
-                and keep your digital funds organized
-              </span>
+              <span className="text-center block">track your balance</span>
             </p>
           </div>
           <div className="h-[200px] flex items-center justify-center w-full bg-gray-200 rounded-lg mt-2 overflow-hidden">

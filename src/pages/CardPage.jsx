@@ -51,7 +51,7 @@ function CardPage() {
               {selectedCard.balance}€
             </div>
           </div>
-          <div className="h-[100px] w-full flex justify-center items-center libre-barcode-39-regular">
+          <div className="h-[100px] w-full text-[60px] scale-y-200 flex justify-center items-center libre-barcode-39-regular">
             {selectedCard.code}
           </div>
 

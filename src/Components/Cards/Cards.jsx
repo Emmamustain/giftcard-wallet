@@ -13,7 +13,12 @@ function Cards({ favoritesOnly }) {
         {cards
           .filter((card) => card.favorite === favoritesOnly)
           .map((card) => (
-            <Card logo={card.image} id={card.id} favorite={card.favorite} />
+            <Card
+              key={card.id}
+              logo={card.image}
+              id={card.id}
+              favorite={card.favorite}
+            />
           ))}
       </div>
     </div>

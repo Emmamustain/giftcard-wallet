@@ -30,9 +30,6 @@ function DropDownMenu() {
           isOpen ? "block" : "hidden"
         } absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white `}
         role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="menu-button"
-        tabIndex="-1"
       >
         {/* ... Dropdown items ... */}
         <div className="py-1" role="none">
