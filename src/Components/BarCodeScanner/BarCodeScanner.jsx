@@ -1,21 +1,16 @@
 import React from "react";
 
-import BarcodeScanner from "react-qr-barcode-scanner";
+import { useZxing } from "react-zxing";
 function BarCodeScanner({ setBarCode }) {
+  const { ref } = useZxing({
+    onDecodeResult(result) {
+      setBarCode(result.getText());
+    },
+  });
+
   return (
     <>
-      <BarcodeScanner
-        width={700}
-        height={200}
-        delay={500}
-        onUpdate={(err, result) => {
-          if (result) setBarCode(result.text);
-          else {
-            setBarCode("");
-            console.error(err);
-          }
-        }}
-      />
+      <video ref={ref} width={700} height={200} />
     </>
   );
 }

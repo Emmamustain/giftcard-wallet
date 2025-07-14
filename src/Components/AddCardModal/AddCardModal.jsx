@@ -8,7 +8,7 @@ function AddCardModal() {
   const [name, setName] = useState("");
   const [pin, setPin] = useState("");
   const [balance, setBalance] = useState("");
-  const [brand, setBrand] = useState(null);
+  const [brand, setBrand] = useState("none");
   const [isOpen, setIsOpen] = useState(false);
   const [barCode, setBarCode] = useState("");
   const { addCard } = useCardsStore();
@@ -57,7 +57,6 @@ function AddCardModal() {
               className="border-1 border-gray-300 rounded-xl px-3 py-2"
               name="SelectedCard"
               value={brand}
-              defaultValue={"none"}
               onChange={(e) => {
                 setBrand(e.target.value);
               }}
@@ -67,7 +66,9 @@ function AddCardModal() {
               </option>
 
               {brands.map((brand) => (
-                <option value={brand.bName}>{brand.bName}</option>
+                <option key={brand.bName} value={brand.bName}>
+                  {brand.bName}
+                </option>
               ))}
             </select>
             <label className="text-gray-600 pl-2 font-normal">
